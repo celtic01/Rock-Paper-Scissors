@@ -1,10 +1,11 @@
 let rand = Math.floor(Math.random() * 3);
 
 
-console.clear();
 
+
+//console.log(playerChoice());//works
+//console.log(computerPlay(rand));//works
 game()
-
 
 function playerChoice() {
     let playerSelection;
@@ -23,12 +24,15 @@ function playerChoice() {
 
 function computerPlay(randomNumber) {
     if (randomNumber == 0) {
+        console.log("Computer chose paper");
         return "paper";
     }
     else if (randomNumber == 1) {
+        console.log("Computer chose scissors");
         return "scissors";
     }
     else {
+        console.log("Computer chose rock");
         return "rock";
     }
 }
@@ -62,29 +66,35 @@ function playRound(player, computer) {
 }
 
 
-function game() {
-    let counterPlayer = 0;
-    let counterComputer = 0;
+function game()
+{
+    let counterPlayerWins = 0;
+    let counterComputerWins = 0;
+    let result;
+    for(let i = 0; i < 5; i++)
+    {
+        if(counterPlayerWins > 2 || counterComputerWins > 2)
+        {
+            break;
+        }
 
-    for (let i = 0; i < 5; i++) {
-        if (counterPlayer == 3) {
-            console.log("You have won!:)")
-            break;
+        result = playRound(playerChoice(),computerPlay(rand));
+
+        if (result == "You won!")
+        {
+            console.log("you won this round!");
+            counterPlayerWins++;
         }
-        if (counterComputer == 3) {
-            console.log("You have lost!:(")
-            break;
-        }
-        if (playRound(playerChoice(), computerPlay(rand)) == "It s a draw!")
-            console.log("draw");
-        continue;
-        if (playRound(playerChoice(), computerPlay(rand) == "You won!")) {
-            console.log("win");
-            counterPlayer++;
-        }
-        else {
-            counterComputer++;
-            console.log("lost");
+        else if (result =="You lose!")
+        {
+            console.log("you lost this round!");
+            counterComputerWins++;
         }
     }
+    if( counterPlayerWins > counterComputerWins)
+    {
+        console.log("you won the game!");
+    }
+    else 
+    console.log("you lost!");
 }
