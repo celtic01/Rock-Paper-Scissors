@@ -64,37 +64,3 @@ function playRound(player, computer) {
         return "You lose!";
     }
 }
-
-
-function game()
-{
-    let counterPlayerWins = 0;
-    let counterComputerWins = 0;
-    let result;
-    for(let i = 0; i < 5; i++)
-    {
-        if(counterPlayerWins > 2 || counterComputerWins > 2)
-        {
-            break;
-        }
-
-        result = playRound(playerChoice(),computerPlay(rand));
-
-        if (result == "You won!")
-        {
-            console.log("you won this round!");
-            counterPlayerWins++;
-        }
-        else if (result =="You lose!")
-        {
-            console.log("you lost this round!");
-            counterComputerWins++;
-        }
-    }
-    if( counterPlayerWins > counterComputerWins)
-    {
-        console.log("you won the game!");
-    }
-    else 
-    console.log("you lost!");
-}
