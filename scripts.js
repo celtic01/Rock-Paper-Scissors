@@ -1,8 +1,19 @@
 let rand = Math.floor(Math.random() * 3);
 
+const buttonPaper = document.createElement('button');
+const buttonRock = document.createElement('button');
+const buttonScissors = document.createElement('button');
+
+buttonPaper.innerText = 'Paper';
+buttonRock.innerText = 'Rock';
+buttonScissors.innerText= 'Scissors';
 
 
+document.body.appendChild(buttonPaper);
+document.body.appendChild(buttonRock);
+document.body.appendChild(buttonScissors);
 
+/*
 //console.log(playerChoice());//works
 //console.log(computerPlay(rand));//works
 game()
@@ -64,3 +75,4 @@ function playRound(player, computer) {
         return "You lose!";
     }
 }
+*/
