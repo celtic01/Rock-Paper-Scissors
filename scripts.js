@@ -40,6 +40,7 @@ document.body.appendChild(matchDecision);
 document.body.appendChild(container);
 
 
+
 buttonRock.addEventListener('click', () => {
 
     matchDecision.removeAttribute('class');
@@ -54,10 +55,34 @@ buttonRock.addEventListener('click', () => {
     {
         matchDecision.classList.add('match-decision');
         matchDecision.classList.add('win');
+        playerWins++;
+        console.log("player " + playerWins);
+        if(playerWins == 5)
+        {
+            alert("you won the game, the game will now restart");
+            playerChoice.innerText = "";
+            computerChoice.innerText = "";
+            matchDecision.innerText = "";
+            playerWins = 0;
+            computerWins = 0;
+        }
+
     }else if (matchDecision.innerText == "You lose!")
     {
         matchDecision.classList.add('match-decision');
         matchDecision.classList.add('loss')
+        computerWins++;
+        console.log("computer " +computerWins);
+        if(computerWins == 5)
+        {
+            alert("you lost the game, the game will now restart");
+            playerChoice.innerText = "";
+            computerChoice.innerText = "";
+            matchDecision.innerText = "";
+            computerWins = 0;
+            playerWins = 0;
+        }
+
     }
     else 
     matchDecision.classList.add('match-decision');
@@ -77,19 +102,44 @@ buttonPaper.addEventListener('click', () => {
     {
         matchDecision.classList.add('match-decision');
         matchDecision.classList.add('win');
+        playerWins++;
+        console.log("player " + playerWins);
+        if(playerWins == 5)
+        {
+            alert("you won the game, the game will now restart");
+            playerChoice.innerText = "";
+            computerChoice.innerText = "";
+            matchDecision.innerText = "";
+            playerWins = 0;
+            computerWins = 0;
+        }
+
     }else if (matchDecision.innerText == "You lose!")
     {
         matchDecision.classList.add('match-decision');
         matchDecision.classList.add('loss')
+        computerWins++;
+        console.log("computer " +computerWins);
+        if(computerWins == 5)
+        {
+            alert("you lost the game, the game will now restart");
+            playerChoice.innerText = "";
+            computerChoice.innerText = "";
+            matchDecision.innerText = "";
+            computerWins = 0;
+            playerWins = 0;
+        }
+
     }
     else 
     matchDecision.classList.add('match-decision');
 });
 
 buttonScissors.addEventListener('click', () => {
- 
+
     matchDecision.removeAttribute('class');
 
+   
     playerChoice.innerText = "scissors";
     playerSelection = "scissors";
     computerChoice.innerText = computerPlay(Math.floor(Math.random() * 3));
@@ -100,10 +150,34 @@ buttonScissors.addEventListener('click', () => {
     {
         matchDecision.classList.add('match-decision');
         matchDecision.classList.add('win');
+        playerWins++;
+        console.log("player " + playerWins);
+        if(playerWins == 5)
+        {
+            alert("you won the game, the game will now restart");
+            playerChoice.innerText = "";
+            computerChoice.innerText = "";
+            matchDecision.innerText = "";
+            playerWins = 0;
+            computerWins = 0;
+        }
+
     }else if (matchDecision.innerText == "You lose!")
     {
         matchDecision.classList.add('match-decision');
         matchDecision.classList.add('loss')
+        computerWins++;
+        console.log("computer " +computerWins);
+        if(computerWins == 5)
+        {
+            alert("you lost the game, the game will now restart");
+            playerChoice.innerText = "";
+            computerChoice.innerText = "";
+            matchDecision.innerText = "";
+            computerWins = 0;
+            playerWins = 0;
+        }
+
     }
     else 
     matchDecision.classList.add('match-decision');
