@@ -1,55 +1,51 @@
 let rand = Math.floor(Math.random() * 3);
 
 const container = document.createElement('div');
-const buttonPaper = document.createElement('button');
 const buttonRock = document.createElement('button');
+const buttonPaper = document.createElement('button');
 const buttonScissors = document.createElement('button');
-const results = document.createElement('div');
+const separator = document.createElement('div');
+const resultsContainer = document.createElement('div');
+const playerChoice = document.createElement('div');
 
-let playerChoice = '';
+separator.innerText = ':';
 
-results.innerText ="Your choice:"
-buttonPaper.innerText = 'Paper';
+playerChoice.classList.add('choice');
+resultsContainer.classList.add("container-results");
+separator.classList.add("separator");
+
 buttonRock.innerText = 'Rock';
-buttonScissors.innerText= 'Scissors';
-
-buttonPaper.addEventListener('click', () => {
-    
-    playerChoice = 'paper';
-    alert("You chose Paper!");
-    console.log(playerChoice);
-
-});
-
-buttonRock.addEventListener('click', () => {
-    
-    playerChoice = 'rock';
-    alert("You chose Rock!");
-    console.log(playerChoice);
-    
-});
-
-buttonScissors.addEventListener('click', () => {
-    
-    playerChoice = 'scissors';
-    alert("You chose Scissors!");
-    console.log(playerChoice);
-    
-    playRound(playerChoice,computerPlay(rand))
-    
-});
-
+buttonPaper.innerText = 'Paper';
+buttonScissors.innerText = 'Scissors';
 
 
 container.classList.add("container");
 
-container.appendChild(buttonPaper);
 container.appendChild(buttonRock);
+container.appendChild(buttonPaper);
 container.appendChild(buttonScissors);
-
+resultsContainer.appendChild(playerChoice);
+resultsContainer.appendChild(separator);
+document.body.appendChild(resultsContainer);
 document.body.appendChild(container);
 
 
+buttonRock.addEventListener('click', () => {
+
+    playerChoice.innerText = "Rock";
+
+});
+
+buttonPaper.addEventListener('click', () => {
+
+    playerChoice.innerText = "Paper";
+});
+
+buttonScissors.addEventListener('click', () => {
+
+    playerChoice.innerText = "Scissors";
+
+});
 
 //console.log(playerChoice());//works
 //console.log(computerPlay(rand));//works
