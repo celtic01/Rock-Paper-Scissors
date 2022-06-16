@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     gap: 100px;
-    margin-top: 200px;
+    margin-top: 100px;
 }
 
 .container-results {
@@ -23,13 +23,24 @@
     font-family: 'Roboto', sans-serif;
 }
 
-.player-choice {
+.player-choice,.win {
     color: green;
 }
 
-.computer-choice {
+.computer-choice,.loss {
     color: red;
 }
+
+
+.match-decision {
+    margin-top: 70px;
+    font-size: 30px;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+
+}
+
 
 button {
     background-color: blanchedalmond;

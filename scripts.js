@@ -7,20 +7,24 @@ const separator = document.createElement('div');
 const resultsContainer = document.createElement('div');
 const playerChoice = document.createElement('div');
 const computerChoice = document.createElement('div');
+const matchDecision = document.createElement('div');
 
 separator.innerText = ':';
 
 let playerSelection = '';
 let computerSelection = '';
+let playerWins = 0;
+let computerWins = 0;
 
+matchDecision.classList.add('match-decision');
 computerChoice.classList.add('computer-choice');
 playerChoice.classList.add('player-choice');
 resultsContainer.classList.add("container-results");
 separator.classList.add("separator");
 
-buttonRock.innerText = 'Rock';
-buttonPaper.innerText = 'Paper';
-buttonScissors.innerText = 'Scissors';
+buttonRock.innerText = 'rock';
+buttonPaper.innerText = 'paper';
+buttonScissors.innerText = 'scissors';
 
 
 container.classList.add("container");
@@ -32,29 +36,77 @@ resultsContainer.appendChild(playerChoice);
 resultsContainer.appendChild(separator);
 resultsContainer.appendChild(computerChoice);
 document.body.appendChild(resultsContainer);
+document.body.appendChild(matchDecision);
 document.body.appendChild(container);
 
 
 buttonRock.addEventListener('click', () => {
 
-    playerChoice.innerText = "Rock";
-    playerSelection = "Rock";
-    computerChoice.innerText = computerPlay(Math.floor(Math.random() *3));
+    matchDecision.removeAttribute('class');
+
+    playerChoice.innerText = "rock";
+    playerSelection = "rock";
+    computerChoice.innerText = computerPlay(Math.floor(Math.random() * 3));
+    computerSelection = computerChoice.innerText;
+    matchDecision.innerText = playRound(playerSelection,computerSelection);
+
+    if(matchDecision.innerText == "You won!")
+    {
+        matchDecision.classList.add('match-decision');
+        matchDecision.classList.add('win');
+    }else if (matchDecision.innerText == "You lose!")
+    {
+        matchDecision.classList.add('match-decision');
+        matchDecision.classList.add('loss')
+    }
+    else 
+    matchDecision.classList.add('match-decision');
 });
 
 buttonPaper.addEventListener('click', () => {
 
-    playerChoice.innerText = "Paper";
-    playerSelection = "Paper";
-    computerChoice.innerText = computerPlay(Math.floor(Math.random() *3));
+    matchDecision.removeAttribute('class');
+
+    playerChoice.innerText = "paper";
+    playerSelection = "paper";
+    computerChoice.innerText = computerPlay(Math.floor(Math.random() * 3));
+    computerSelection = computerChoice.innerText;
+    matchDecision.innerText = playRound(playerSelection,computerSelection);
+
+    if(matchDecision.innerText == "You won!")
+    {
+        matchDecision.classList.add('match-decision');
+        matchDecision.classList.add('win');
+    }else if (matchDecision.innerText == "You lose!")
+    {
+        matchDecision.classList.add('match-decision');
+        matchDecision.classList.add('loss')
+    }
+    else 
+    matchDecision.classList.add('match-decision');
 });
 
 buttonScissors.addEventListener('click', () => {
+ 
+    matchDecision.removeAttribute('class');
 
-    playerChoice.innerText = "Scissors";
-    playerSelection = "Scissors";
-    computerChoice.innerText = computerPlay(Math.floor(Math.random() *3));
+    playerChoice.innerText = "scissors";
+    playerSelection = "scissors";
+    computerChoice.innerText = computerPlay(Math.floor(Math.random() * 3));
+    computerSelection = computerChoice.innerText;
+    matchDecision.innerText = playRound(playerSelection,computerSelection);
 
+    if(matchDecision.innerText == "You won!")
+    {
+        matchDecision.classList.add('match-decision');
+        matchDecision.classList.add('win');
+    }else if (matchDecision.innerText == "You lose!")
+    {
+        matchDecision.classList.add('match-decision');
+        matchDecision.classList.add('loss')
+    }
+    else 
+    matchDecision.classList.add('match-decision');
 });
 
 //console.log(playerChoice());//works
