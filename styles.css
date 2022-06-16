@@ -1,4 +1,4 @@
-.container{
+.container {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -6,24 +6,32 @@
     gap: 100px;
     margin-top: 200px;
 }
-.container-results{
-  display: flex;
-  flex-direction: row;
-  gap: 5px;
+
+.container-results {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
 }
-.separator,.choice {
-    margin-top:200px;
+
+.separator,
+.player-choice,
+.computer-choice {
+    margin-top: 200px;
     font-size: 30px;
     justify-content: center;
     align-items: center;
-    font-family:'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
-.choice {
+.player-choice {
     color: green;
 }
 
-button{
+.computer-choice {
+    color: red;
+}
+
+button {
     background-color: blanchedalmond;
     font-family: 'Roboto', sans-serif;
 

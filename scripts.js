@@ -1,4 +1,3 @@
-let rand = Math.floor(Math.random() * 3);
 
 const container = document.createElement('div');
 const buttonRock = document.createElement('button');
@@ -7,10 +6,15 @@ const buttonScissors = document.createElement('button');
 const separator = document.createElement('div');
 const resultsContainer = document.createElement('div');
 const playerChoice = document.createElement('div');
+const computerChoice = document.createElement('div');
 
 separator.innerText = ':';
 
-playerChoice.classList.add('choice');
+let playerSelection = '';
+let computerSelection = '';
+
+computerChoice.classList.add('computer-choice');
+playerChoice.classList.add('player-choice');
 resultsContainer.classList.add("container-results");
 separator.classList.add("separator");
 
@@ -26,6 +30,7 @@ container.appendChild(buttonPaper);
 container.appendChild(buttonScissors);
 resultsContainer.appendChild(playerChoice);
 resultsContainer.appendChild(separator);
+resultsContainer.appendChild(computerChoice);
 document.body.appendChild(resultsContainer);
 document.body.appendChild(container);
 
@@ -33,17 +38,22 @@ document.body.appendChild(container);
 buttonRock.addEventListener('click', () => {
 
     playerChoice.innerText = "Rock";
-
+    playerSelection = "Rock";
+    computerChoice.innerText = computerPlay(Math.floor(Math.random() *3));
 });
 
 buttonPaper.addEventListener('click', () => {
 
     playerChoice.innerText = "Paper";
+    playerSelection = "Paper";
+    computerChoice.innerText = computerPlay(Math.floor(Math.random() *3));
 });
 
 buttonScissors.addEventListener('click', () => {
 
     playerChoice.innerText = "Scissors";
+    playerSelection = "Scissors";
+    computerChoice.innerText = computerPlay(Math.floor(Math.random() *3));
 
 });
 
