@@ -1,5 +1,6 @@
 let rand = Math.floor(Math.random() * 3);
 
+const container = document.createElement('div');
 const buttonPaper = document.createElement('button');
 const buttonRock = document.createElement('button');
 const buttonScissors = document.createElement('button');
@@ -8,10 +9,14 @@ buttonPaper.innerText = 'Paper';
 buttonRock.innerText = 'Rock';
 buttonScissors.innerText= 'Scissors';
 
+container.classList.add("container");
 
-document.body.appendChild(buttonPaper);
-document.body.appendChild(buttonRock);
-document.body.appendChild(buttonScissors);
+container.appendChild(buttonPaper);
+container.appendChild(buttonRock);
+container.appendChild(buttonScissors);
+
+document.body.appendChild(container);
+
 
 /*
 //console.log(playerChoice());//works
