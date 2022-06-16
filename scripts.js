@@ -4,10 +4,42 @@ const container = document.createElement('div');
 const buttonPaper = document.createElement('button');
 const buttonRock = document.createElement('button');
 const buttonScissors = document.createElement('button');
+const results = document.createElement('div');
 
+let playerChoice = '';
+
+results.innerText ="Your choice:"
 buttonPaper.innerText = 'Paper';
 buttonRock.innerText = 'Rock';
 buttonScissors.innerText= 'Scissors';
+
+buttonPaper.addEventListener('click', () => {
+    
+    playerChoice = 'paper';
+    alert("You chose Paper!");
+    console.log(playerChoice);
+
+});
+
+buttonRock.addEventListener('click', () => {
+    
+    playerChoice = 'rock';
+    alert("You chose Rock!");
+    console.log(playerChoice);
+    
+});
+
+buttonScissors.addEventListener('click', () => {
+    
+    playerChoice = 'scissors';
+    alert("You chose Scissors!");
+    console.log(playerChoice);
+    
+    playRound(playerChoice,computerPlay(rand))
+    
+});
+
+
 
 container.classList.add("container");
 
@@ -18,11 +50,11 @@ container.appendChild(buttonScissors);
 document.body.appendChild(container);
 
 
-/*
+
 //console.log(playerChoice());//works
 //console.log(computerPlay(rand));//works
-game()
 
+/*
 function playerChoice() {
     let playerSelection;
     while (true) {
@@ -37,7 +69,7 @@ function playerChoice() {
 
     }
 }
-
+*/
 function computerPlay(randomNumber) {
     if (randomNumber == 0) {
         console.log("Computer chose paper");
@@ -80,4 +112,3 @@ function playRound(player, computer) {
         return "You lose!";
     }
 }
-*/
