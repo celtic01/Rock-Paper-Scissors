@@ -127,47 +127,49 @@ function Game(choice) {
 
     playerChoice.innerText = choice;
     playerSelection = choice;
+
     computerSelection = computerPlay(Math.floor(Math.random() * 3));
-    console.log(`Player chose ${choice}`);
     computerChoice.innerText = computerSelection;
 
     matchDecision.innerText = playRound(playerSelection, computerSelection);
 
-    console.log(matchDecision.innerText);
-
     if (matchDecision.innerText == "You won!") {
         matchDecision.classList.add('match-decision');
         matchDecision.classList.add('win');
-        playerWins++;
+        
+        playerWins++
         playerScore.innerText = playerScore.innerText.replace(/\d$/, `${playerWins}`);
-        console.log("player " + playerWins);
+      
         if (playerWins == 5) {
             alert("you won the game, the game will now restart");
-            playerScore.innerText = 'you: 0';
-            playerChoice.innerText = "";
-            computerChoice.innerText = "";
-            matchDecision.innerText = "";
-            playerWins = 0;
-            computerWins = 0;
+            clearAll();
         }
 
     } else if (matchDecision.innerText == "You lose!") {
         matchDecision.classList.add('match-decision');
         matchDecision.classList.add('loss')
+
         computerWins++;
         computerScore.innerText = computerScore.innerText.replace(/\d$/, `${computerWins}`);
-        console.log("computer " + computerWins);
+
+        
+
         if (computerWins == 5) {
             alert("you lost the game, the game will now restart");
-            computerScore.innerText = "computer: 0";
-            playerChoice.innerText = "";
-            computerChoice.innerText = "";
-            matchDecision.innerText = "";
-            computerWins = 0;
-            playerWins = 0;
+            clearAll();
         }
     }
     else {
         matchDecision.classList.add('match-decision');
     }
+}
+
+function clearAll () {
+    computerScore.innerText = "computer: 0";
+    playerScore.innerText = 'you: 0';
+    playerChoice.innerText = "";
+    computerChoice.innerText = "";
+    matchDecision.innerText = "";
+    computerWins = 0;
+    playerWins = 0;
 }
