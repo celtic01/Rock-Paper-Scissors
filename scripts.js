@@ -141,8 +141,9 @@ function Game(choice) {
         playerScore.innerText = playerScore.innerText.replace(/\d$/, `${playerWins}`);
       
         if (playerWins == 5) {
-            alert("you won the game, the game will now restart");
             clearAll();
+            alert("you won the game, the game will now restart");
+           
         }
 
     } else if (matchDecision.innerText == "You lose!") {
@@ -155,8 +156,9 @@ function Game(choice) {
         
 
         if (computerWins == 5) {
-            alert("you lost the game, the game will now restart");
             clearAll();
+            alert("you lost the game, the game will now restart");
+            
         }
     }
     else {
